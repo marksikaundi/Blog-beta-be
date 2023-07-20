@@ -3,8 +3,10 @@ const cors = require("cors");
 const app = express();
 
 app.use(cors());
+app.use(express.json());
 
 app.get("/register", (req, res) => {
-  res.json("Testing my backend 2000");
+  const { username, password } = req.body;
+  res.json({ requestData: { username, password } });
 });
 app.listen(4000);
