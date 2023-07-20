@@ -1,6 +1,10 @@
-const express = require("express")
-const app = express()
-app.get('/test', (req, res) => {
-res.json("Test passed, all good")
-})
-app.listen(4000)
+const express = require("express");
+const cors = require("cors");
+const app = express();
+
+app.use(cors());
+
+app.get("/register", (req, res) => {
+  res.json("Test passed, all good");
+});
+app.listen(4000);
