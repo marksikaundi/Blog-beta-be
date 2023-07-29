@@ -20,7 +20,7 @@ app.get("/register", async (req, res) => {
     });
     res.json(userDoc);
   } catch (e) {
-    res.status(400);
+    res.status(400).json(e)
   }
 });
 app.listen(4000);
